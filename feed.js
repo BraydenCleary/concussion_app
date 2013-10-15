@@ -1,0 +1,3 @@
+concussionData.directive('feed', ['', function(){
+
+}]);
