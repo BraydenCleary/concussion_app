@@ -1,14 +1,14 @@
 <html>
 <head>
 	<title>Concussion Data</title>
+	<link href="/app.css" rel="stylesheet">
 	<script src="/app.js"></script>
 </head>
 <body>
 	<div class='home' ng-app='concussionData'>
-		<div class='graph'>
-			graph
-		</div>
 		<h1>NFL Concussion Data</h1>
+		<div class='charts'>
+		</div>
 		<div class='feed'>
 			<table>
 				<tr>
@@ -32,9 +32,6 @@
 					<td class='week' ng-bind='concussion.week'></td>
 				</tr>
 			</table>
-		</div>
-
-		<div class='team-high'>
 		</div>
 	</div>
 </body>

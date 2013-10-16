@@ -10,9 +10,12 @@ var compile = module.exports = function() {
 }
 
 var jsFiles  = [
+  'jquery.min.js',
   'angular.min.js',
+  'd3.min.js',
   './node_modules/underscore/underscore.js',
   'concussion_data.js',
   'concussion_service.js',
-  'feed.js'
+  'feed.js',
+  'graph.js'
 ]

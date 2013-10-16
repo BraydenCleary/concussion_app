@@ -3,6 +3,7 @@ var fs          = require('fs')
   , dispatch    = require('dispatch')
   , concat      = require('concat-stream')
   , JSONStream  = require('JSONStream')
+  , styles      = require('./styles')
   , db          = require('./db')
   , clientJS    = require('./client-js')
   , concussions = require('./concussions.js')
@@ -36,6 +37,11 @@ app.get('/', function(req, res){
 app.get('/app.js', function(req, res){
   res.setHeader('Content-Type', 'text/javascript');
   clientJS().pipe(res);
+});
+
+app.get('/app.css', function(req, res) {
+  res.setHeader('Content-Type', 'text/css');
+  styles().pipe(res);
 });
 
 app.get('/concussions', function(req, res){
