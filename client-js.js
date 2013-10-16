@@ -12,5 +12,7 @@ var compile = module.exports = function() {
 var jsFiles  = [
   'angular.min.js',
   './node_modules/underscore/underscore.js',
-  'concussion_data.js'
+  'concussion_data.js',
+  'concussion_service.js',
+  'feed.js'
 ]
