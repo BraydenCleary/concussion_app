@@ -3,7 +3,7 @@ var __ = require("underscore");
 var db = require('./db');
 var through2 = require('through2');
 var ReadableStream = require('stream').Readable;
-var keys = require('./api_keys');
+// var keys = require('./api_keys');
 
 module.exports = concussions = {}
 
