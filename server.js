@@ -56,7 +56,9 @@ app.get('/concussions/:filter', function(req, res){
   var week = req.query.week;
   var season = req.query.season;
   var filter = req.params.filter
-  console.log(filter)
+  if (filter == 'number'){
+    filter = 'uniform_number'
+  }
   concussions.getBy(filter,week,season).pipe(JSONStream.stringify()).pipe(res);
 });
 

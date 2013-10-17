@@ -1,8 +1,23 @@
 .chart div {
 	font: 10px sans-serif;
 	background-color: steelblue;
-	text-align: right;
 	padding: 3px;
 	margin: 1px;
 	color: white;
 }
+
+.chart rect {
+  stroke: white;
+  fill: steelblue;
+}
+
+.filters, .season, .week {
+	float: left;
+	margin-left: 5%;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+}
+

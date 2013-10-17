@@ -16,6 +16,7 @@ var jsFiles  = [
   './node_modules/underscore/underscore.js',
   'concussion_data.js',
   'concussion_service.js',
+  'graph_controller.js',
   'feed.js',
   'graph.js'
 ]

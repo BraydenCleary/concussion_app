@@ -44,13 +44,13 @@ concussions.index = function(week, season){
 
 concussions.getBy = function(filter, week, season){
   if (week && season)
-    var sql = "SELECT " + filter + ", count(*) FROM concussions WHERE week =" + week + "AND season=" + season + "GROUP BY " + filter + ";"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE week =" + week + "AND season=" + season + "GROUP BY " + filter + ";"
   else if (week)
-    var sql = "SELECT " + filter + ", count(*) FROM concussions WHERE week =" + week + "GROUP BY " + filter + ";"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE week =" + week + "GROUP BY " + filter + ";"
   else if (season)
-    var sql = "SELECT " + filter + ", count(*) FROM concussions WHERE season =" + season + "GROUP BY " + filter + ";"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE season =" + season + "GROUP BY " + filter + ";"
   else
-    var sql = "SELECT " + filter + ", count(*) FROM concussions GROUP BY " + filter + ";"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions GROUP BY " + filter + ";"
   return db.readQuery(sql);
 }
 

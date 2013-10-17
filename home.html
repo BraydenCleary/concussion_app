@@ -1,39 +1,47 @@
 <html>
 <head>
-	<title>Concussion Data</title>
-	<link href="/app.css" rel="stylesheet">
-	<script src="/app.js"></script>
+  <title>Concussion Data</title>
+  <link href="/app.css" rel="stylesheet">
+  <script src="/app.js"></script>
 </head>
 <body>
-	<div class='home' ng-app='concussionData'>
-		<h1>NFL Concussion Data</h1>
-		<div class='charts'>
-		</div>
-		<div class='feed'>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Number</th>
-					<th>Team</th>
-					<th>Opponent</th>
-					<th>Poition</th>
-					<th>Practice Description</th>
-					<th>Season</th>
-					<th>Week</th>
-				</tr>
-				<tr ng-repeat='concussion in concussions'>
-					<td class='name' ng-bind='concussion.name'></td>
-					<td class='uniform_number' ng-bind='concussion.uniform_number'></td>
-					<td class='team' ng-bind='concussion.team'></td>
-					<td class='opponent' ng-bind='concussion.opponent'></td>
-					<td class='position' ng-bind='concussion.position'></td>
-					<td class='practice-description' ng-bind='concussion.practice_description'></td>
-					<td class='season' ng-bind='concussion.season'></td>
-					<td class='week' ng-bind='concussion.week'></td>
-				</tr>
-			</table>
-		</div>
-	</div>
+  <div class='home' ng-app='concussionData'>
+    <h1>NFL Concussion Data</h1>
+    <div class='data-graph' ng-controller='graphController'>
+      <div class='filters'>
+        <span class='title'>Filters</span>
+        <ul>
+          <li>Filters</li>
+          <li class='name' ng-click="switchFilter($event)">Name</li>
+          <li class='number' ng-click="switchFilter($event)">Number</li>
+          <li class='position' ng-click="switchFilter($event)">Position</li>
+          <li class='team' ng-click="switchFilter($event)">Team</li>
+          <li class='opponent' ng-click="switchFilter($event)">Opponent</li>
+        </ul>
+      </div>
+      <div class='season'>
+        <span class='title'>Season</span>
+        <ul>
+          <li>Season</li>
+          <li ng-click="switchSeason($event)" data-value={{}}>Any</li>
+          <li ng-click="switchSeason($event)" data-value='2012'>2012</li>
+          <li ng-click="switchSeason($event)" data-value='2013'>2013</li>
+        </ul>
+      </div>
+      <div class='week'>
+        <span class='title'>Week</span>
+        <ul>
+          <li data-value={{}} ng-click="switchWeek($event)">Any</li>
+          <li ng-repeat="week in weeks" ng-click="switchWeek($event)" data-value={{$index+1}}>
+            {{week}}
+          </li>
+        </ul>
+      </div>
+
+      <div class='graph'>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
