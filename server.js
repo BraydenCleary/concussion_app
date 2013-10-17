@@ -8,7 +8,6 @@ var fs          = require('fs')
   , clientJS    = require('./client-js')
   , concussions = require('./concussions.js')
   , express     = require('express')
-  , wach        = require('wach')
   , __          = require('underscore')
 
 var app = express();
