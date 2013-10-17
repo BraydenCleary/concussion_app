@@ -4,6 +4,7 @@
   "dependencies": {
     "combined-stream": "0.0.x",
     "concat-stream": "1.0.x",
+    "csvtojson": "0.1.4",
     "dispatch": "0.2.x",
     "express": "3.4.x",
     "JSONStream": "0.7.x",
