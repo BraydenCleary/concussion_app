@@ -37,7 +37,7 @@ concussionData.directive('graph', ['$http', function($http){
             .enter().append("rect")
               .attr("y", function(d, i) { return i * 20; })
               .attr("x", 210)
-              .attr("width", function(d){ return d.count * 20})
+              .attr("width", function(d){ return d.count * 2})
               .attr("height", 20)
 
           chart.selectAll("text")

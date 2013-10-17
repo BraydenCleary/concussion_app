@@ -11,7 +11,9 @@ CREATE TABLE IF NOT EXISTS concussions (
   practice varchar(50),
   practice_description varchar(100),
   season int,
+  season_type int,
   status varchar(30),
   team varchar(10),
+  updated varchar(100),
   week int
 );
