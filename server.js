@@ -67,7 +67,7 @@ app.use(function(err, req, res, next){
 });
 
 
-var port   = 4000
+var port   = process.env.PORT || 4000
 var start  = function() {
   app.listen(port, function() {
     console.log("app running on port: " + port)
