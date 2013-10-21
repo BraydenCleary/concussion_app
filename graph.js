@@ -4,7 +4,7 @@ concussionData.directive('graph', ['$http', function($http){
     restrict: 'C',
     replace: true,
     controller:['$scope', '$http', function($scope, $http){
-      $scope.$watch('[filter, week, season]', function(newVal, oldVal){
+      $scope.$watch('[activeFilter, activeWeek, activeSeason]', function(newVal, oldVal){
         var filter = newVal[0];
         var week = newVal[1];
         var season = newVal[2];

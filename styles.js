@@ -11,4 +11,4 @@ var stylesFor = function(path) {
   return fs.createReadStream(path)
 }
 
-var cssFiles = [ 'normalize.css', 'main.css' ]
+var cssFiles = [ 'normalize.css','foundation.min.css', 'main.css', 'foundation_overrides.css'  ]
