@@ -1,21 +1,12 @@
-concussionData.directive('graph', ['$http', function($http){
+concussionData.directive('drawGraph', ['$http', function($http){
 
   return{
     restrict: 'C',
     replace: true,
     controller:['$scope', '$http', function($scope, $http){
-      $scope.$watch('[activeFilter, activeWeek, activeSeason]', function(newVal, oldVal){
-        var filter = newVal[0];
-        var week = newVal[1];
-        var season = newVal[2];
-        $http({
-          url: '/concussions/' + filter,
-          method: 'GET',
-          params: {
-            week: week,
-            season: season
-          }
-        }).success(function(data, status, headers, config){
+      $scope.$watch('data', function(newVal, oldVal){
+        if (newVal){
+          var data = newVal.data;
           $('.chart').remove();
           var chart = d3.select(".data-graph").append("svg")
             .attr("class", "chart")
@@ -50,7 +41,7 @@ concussionData.directive('graph', ['$http', function($http){
               .attr("dy", 15) // vertical-align: middle
               .attr("text-anchor", "end") // text-align: right
               .text(function(d){return d.filter})
-        });
+        }
       }, true);
     }],
     link: function(scope, el, attrs){

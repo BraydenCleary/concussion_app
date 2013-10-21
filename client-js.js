@@ -18,5 +18,5 @@ var jsFiles  = [
   'concussion_service.js',
   'graph_controller.js',
   'feed.js',
-  'graph.js'
+  'draw_graph.js'
 ]
