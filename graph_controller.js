@@ -22,7 +22,7 @@ concussionData.controller('graphController', ['$scope', '$http', 'concussionServ
 
   fetchNewData = function(scope){
     concussionService.fetch(scope).then(function(data){
-      $scope.data = data;
+      $scope.data = data.data;
     });
   }
 

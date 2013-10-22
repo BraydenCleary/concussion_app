@@ -1,12 +1,11 @@
 concussionData.directive('drawGraph', ['$http', function($http){
-
   return{
     restrict: 'C',
     replace: true,
     controller:['$scope', '$http', function($scope, $http){
       $scope.$watch('data', function(newVal, oldVal){
         if (newVal){
-          var data = newVal.data;
+          var data = newVal;
           $('.chart').remove();
           var chart = d3.select(".data-graph").append("svg")
             .attr("class", "chart")
