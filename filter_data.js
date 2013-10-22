@@ -14,7 +14,7 @@ concussionData.directive('filterData', ['concussionService', function(concussion
           var data = data.data
           if (newVal && newVal != ''){
             var matches = _.filter(data, function(data){
-              return startsWith(data.filter, newVal)
+              return startsWith(data.filter.toLowerCase(), newVal.toLowerCase());
             });
             if (_.size(matches) > 0){
               $scope.data = matches
@@ -26,7 +26,6 @@ concussionData.directive('filterData', ['concussionService', function(concussion
       });
     }],
     link: function(scope, el, attrs){
-
     }
   }
 }]);
