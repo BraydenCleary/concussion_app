@@ -1,6 +1,6 @@
 concussionData.directive('filterData', ['concussionService', function(concussionService){
   return {
-    restrict: 'A',
+    restrict: 'C',
     controller: ['$scope', function($scope){
       startsWith = function(string, starts){
         if (starts === '') return true;

@@ -7,24 +7,24 @@ concussionData.controller('graphController', ['$scope', '$http', 'concussionServ
 
   $scope.switchFilter = function(e){
     $scope.activeFilter = e.currentTarget.getAttribute('data-value');
-    fetchNewData($scope);
+    $scope.fetchNewData($scope);
   }
 
   $scope.switchSeason = function(e){
     $scope.activeSeason = e.currentTarget.getAttribute('data-value');
-    fetchNewData($scope);
+    $scope.fetchNewData($scope);
   }
 
   $scope.switchWeek = function(e){
     $scope.activeWeek = e.currentTarget.getAttribute('data-value');
-    fetchNewData($scope);
+    $scope.fetchNewData($scope);
   }
 
-  fetchNewData = function(scope){
+  $scope.fetchNewData = function(scope){
     concussionService.fetch(scope).then(function(data){
       $scope.data = data.data;
     });
   }
 
-  fetchNewData($scope);
+  $scope.fetchNewData($scope);
 }]);

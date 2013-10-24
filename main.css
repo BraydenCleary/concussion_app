@@ -1,9 +1,9 @@
 .chart div {
-	font: 10px sans-serif;
-	background-color: steelblue;
-	padding: 3px;
-	margin: 1px;
-	color: white;
+  font: 10px sans-serif;
+  background-color: steelblue;
+  padding: 3px;
+  margin: 1px;
+  color: white;
 }
 
 .chart rect {
@@ -12,16 +12,23 @@
 }
 
 .filters, .season, .week {
-	float: left;
-	margin-left: 5%;
+  text-align: center;
 }
 
-ul{
-	list-style: none;
-	padding: 0;
+.home ul{
+  list-style: none;
+  padding: 0;
 }
-
 
 .active{
-	color: red;
+  color: red;
 }
+
+.nfl-logo, .search{
+  height: auto;
+}
+
+.top-search{
+  height: 95px;
+}
+

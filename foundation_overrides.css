@@ -2,3 +2,7 @@ button:hover, button:focus, .button:hover, .button:focus{
   background-color: #2ba6cb;
   color: red;
 }
+
+.columns{
+  margin-left: 0;
+}

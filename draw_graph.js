@@ -8,8 +8,7 @@ concussionData.directive('drawGraph', ['$http', function($http){
           var data = newVal;
           $('.chart').remove();
           var chart = d3.select(".data-graph").append("svg")
-            .attr("class", "chart")
-            .attr("width", 420)
+            .attr("class", "chart columns large-8 small-8")
             .attr("height", 20 * data.length);
 
           var maxCount = _.map(data, function(data){return data.count})

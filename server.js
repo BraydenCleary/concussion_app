@@ -12,7 +12,6 @@ var fs          = require('fs')
 
 var app = express();
 
-
 //Global error handling
 process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + err);
@@ -59,6 +58,11 @@ app.get('/concussions/:filter', function(req, res){
     filter = 'uniform_number'
   }
   concussions.getBy(filter,week,season).pipe(JSONStream.stringify()).pipe(res);
+});
+
+app.get('/*.jpg', function(req,res) {
+  var filename = req.params[0];
+  res.sendfile('images/' + filename + '.jpg');
 });
 
 app.use(function(err, req, res, next){
