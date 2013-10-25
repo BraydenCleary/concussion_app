@@ -35,25 +35,25 @@ concussions.update = function(concussion){
 
 concussions.index = function(week, season){
   if (week && season)
-    var sql = "SELECT * FROM concussions WHERE week =" + week + "AND season=" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
+    var sql = "SELECT * FROM injuries WHERE week =" + week + "AND season=" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
   else if (week)
-    var sql = "SELECT * FROM concussions WHERE week =" + week + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
+    var sql = "SELECT * FROM injuries WHERE week =" + week + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
   else if (season)
-    var sql = "SELECT * FROM concussions WHERE season =" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
+    var sql = "SELECT * FROM injuries WHERE season =" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY team;"
   else
-    var sql = "SELECT * FROM concussions;"
+    var sql = "SELECT * FROM injuries;"
   return db.readQuery(sql);
 }
 
 concussions.getBy = function(filter, week, season){
   if (week && season)
-    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE week =" + week + "AND season=" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM injuries WHERE week =" + week + "AND season=" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
   else if (week)
-    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE week =" + week + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM injuries WHERE week =" + week + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
   else if (season)
-    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE season =" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM injuries WHERE season =" + season + " and (body_part='Concussion' or body_part='Head') GROUP BY " + filter + " ORDER BY count(*) DESC;"
   else
-    var sql = "SELECT " + filter + " as filter, count(*) FROM concussions WHERE body_part='Concussion' or body_part='Head' GROUP BY " + filter + " ORDER BY count(*) DESC;"
+    var sql = "SELECT " + filter + " as filter, count(*) FROM injuries WHERE body_part='Concussion' or body_part='Head' GROUP BY " + filter + " ORDER BY count(*) DESC;"
   return db.readQuery(sql);
 }
 

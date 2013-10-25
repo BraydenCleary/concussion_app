@@ -1,6 +1,5 @@
-DROP TABLE IF EXISTS concussions;
-CREATE TABLE IF NOT EXISTS concussions (
-  id SERIAL,
+DROP TABLE IF EXISTS injuries;
+CREATE TABLE injuries (
   body_part varchar(30),
   injury_id int,
   name varchar(1000),

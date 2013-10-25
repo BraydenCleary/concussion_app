@@ -5,7 +5,7 @@ var pg = require('pg')
 
 module.exports = db = {}
 
-db.url = process.env.DATABASE_URL || "postgres://braydencleary@localhost/concussion_tracker"
+db.url = process.env.HEROKU_POSTGRESQL_GREEN_URL || "postgres://braydencleary@localhost/concussion_tracker"
 
 db.readQuery = function(query) {
   var rs = new ReadableStream({objectMode:true})
