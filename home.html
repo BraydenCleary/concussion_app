@@ -28,10 +28,18 @@
       <div class='season row'>
         <h5 class='title'>Season</h5>
         <div class="slider season-slider" data-min='2011' data-max='2013'></div>
+        <div class='slider-labels'>
+          <div class='season-label columns small-4 large-4'>2011</div>
+          <div class='season-label columns small-4 large-4'>2012</div>
+          <div class='season-label columns small-4 large-4'>2013</div>
+        </div>
       </div>
       <div class='week row'>
         <h5 class='title'>Week</h5>
         <div class="slider week-slider" data-min='1' data-max='17'></div>
+        <div class='slider-labels'>
+          <div class='week-label' ng-repeat="week in weeks">{{$index + 1}}</div>
+        </div>
       </div>
       <div class='draw-graph'>
       </div>

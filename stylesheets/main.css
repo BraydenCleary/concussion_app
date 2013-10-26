@@ -32,3 +32,39 @@
   height: 95px;
 }
 
+.season .left{
+  text-align: left;
+}
+
+.season .right{
+  text-align: right;
+}
+
+.slider-labels{
+  margin-top: 5px;
+}
+
+.season-label{
+  display: inline-block;
+  text-align: center;
+}
+
+.season-label:first-of-type{
+  text-align: left;
+}
+
+.season-label:last-of-type{
+  text-align: right;
+}
+
+.week-label{
+  display: inline-block;
+  text-align: left;
+  width: 6.25%;
+}
+
+.week-label:last-of-type{
+  position: absolute;
+  right: 0;
+}
+
