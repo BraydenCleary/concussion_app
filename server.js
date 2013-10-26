@@ -51,13 +51,15 @@ app.get('/concussions', function(req, res){
 
 app.get('/concussions/:filter', function(req, res){
   res.setHeader('Content-Type', 'text/json');
-  var week = req.query.week;
-  var season = req.query.season;
+  var weekStart = req.query.weekStart;
+  var weekEnd = req.query.weekEnd;
+  var seasonStart = req.query.seasonStart;
+  var seasonEnd = req.query.seasonEnd;
   var filter = req.params.filter
   if (filter == 'number'){
     filter = 'uniform_number'
   }
-  concussions.getBy(filter,week,season).pipe(JSONStream.stringify()).pipe(res);
+  concussions.getBy(filter,weekStart, weekEnd, seasonStart, seasonEnd).pipe(JSONStream.stringify()).pipe(res);
 });
 
 app.get('/*.jpg', function(req,res) {

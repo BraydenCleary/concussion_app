@@ -3,7 +3,7 @@ concussionData.service('concussionService', ['$http', function($http){
     return $http({
       url: '/concussions/' + scope.activeFilter,
       method: 'GET',
-      params: { week: scope.activeWeek, season: scope.activeSeason}
+      params: { weekStart: scope.weekStart, weekEnd: scope.weekEnd, seasonStart: scope.seasonStart, seasonEnd: scope.seasonEnd}
     })
 	}
 }]);

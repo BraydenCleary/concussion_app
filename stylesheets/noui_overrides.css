@@ -1,0 +1,9 @@
+.noUi-horizontal{
+  height: 15px;
+}
+
+.noUi-horizontal .noUi-handle{
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+}

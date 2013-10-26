@@ -20,5 +20,7 @@ var jsFiles  = [
   'javascripts/controllers/graph_controller.js',
   'javascripts/directives/draw_graph.js',
   'javascripts/directives/filter_data.js',
-  'javascripts/directives/week_slider.js'
+  'javascripts/directives/slider.js',
+  'javascripts/directives/week_slider.js',
+  'javascripts/directives/season_slider.js'
 ]

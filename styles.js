@@ -11,4 +11,4 @@ var stylesFor = function(path) {
   return fs.createReadStream(path)
 }
 
-var cssFiles = [ 'stylesheets/third-party/normalize.css','stylesheets/third-party/foundation.min.css', 'stylesheets/main.css', 'stylesheets/foundation_overrides.css', 'stylesheets/third-party/jquery.nouislider.min.css'  ]
+var cssFiles = [ 'stylesheets/third-party/normalize.css','stylesheets/third-party/foundation.min.css', 'stylesheets/main.css', 'stylesheets/foundation_overrides.css', 'stylesheets/third-party/jquery.nouislider.min.css', 'stylesheets/noui_overrides.css'  ]

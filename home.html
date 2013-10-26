@@ -3,57 +3,38 @@
   <title>Concussion Data</title>
   <link href="/app.css" rel="stylesheet">
   <script src="/app.js"></script>
-  <script>
-    $(document).on('ready', function(){
-      $(".slider").noUiSlider({
-         start: 0
-        ,range: [1, 17]
-        ,handles: 1
-        ,step: 1
-        ,orientation: 'vertical'
-      });
-    })
-  </script>
 </head>
 <body>
   <div class='home' ng-app='concussionData'>
-    <div class='data-graph row' ng-controller='graphController'>
+    <div class='data-graph' ng-controller='graphController'>
       <div class='top-search row'>
         <image class='nfl-logo columns large-1 small-1' src='nfl.jpg'>
-        <h1 class='title columns large-7 small-7'>NFL Concussion Data</h1>
+        <h1 class='title columns large-7 small-7'>NFL Injury Data</h1>
         <div class='search columns large-3 small-3'>
           <label for="search">Search</label>
           <input id="search" class='filter-data' ng-model="search.filterText"></input>
         </div>
       </div>
-      <div class='filters columns large-2'>
-        <h5 class='title'>Filters</h5>
+      <div class='filters row'>
+        <h5 class='title columns small-2 large-2'>Filters</h5>
         <ul>
-          <li><button class="tiny button" ng-click="switchFilter($event)" data-value="team" ng-class="{active: 'team'==activeFilter}">Team</button></li>
-          <li><button class="tiny button" ng-click="switchFilter($event)" data-value="name" ng-class="{active: 'name'==activeFilter}">Name</button></li>
-          <li><button class="tiny button" ng-click="switchFilter($event)" data-value="number" ng-class="{active: 'number'==activeFilter}">Number</button></li>
-          <li><button class="tiny button" ng-click="switchFilter($event)" data-value="position" ng-class="{active: 'position'==activeFilter}">Position</button></li>
-          <li><button class="tiny button" ng-click="switchFilter($event)" data-value="opponent" ng-class="{active: 'opponent'==activeFilter}">Opponent</button></li>
+          <li class='columns small-2 large-2'><button class="tiny button" ng-click="switchFilter($event)" data-value="team" ng-class="{active: 'team'==activeFilter}">Team</button></li>
+          <li class='columns small-2 large-2'><button class="tiny button" ng-click="switchFilter($event)" data-value="name" ng-class="{active: 'name'==activeFilter}">Name</button></li>
+          <li class='columns small-2 large-2'><button class="tiny button" ng-click="switchFilter($event)" data-value="number" ng-class="{active: 'number'==activeFilter}">Number</button></li>
+          <li class='columns small-2 large-2'><button class="tiny button" ng-click="switchFilter($event)" data-value="position" ng-class="{active: 'position'==activeFilter}">Position</button></li>
+          <li class='columns small-2 large-2'><button class="tiny button" ng-click="switchFilter($event)" data-value="opponent" ng-class="{active: 'opponent'==activeFilter}">Opponent</button></li>
         </ul>
       </div>
-      <div class='season columns large-1'>
+      <div class='season row'>
         <h5 class='title'>Season</h5>
-        <ul>
-          <li><button class="tiny button style-active"  ng-click="switchSeason($event)" data-value={{}} ng-class="{active: ''==activeSeason}">All</button></li>
-          <li><button class="tiny button" ng-click="switchSeason($event)" data-value='2012' ng-class="{active: '2012'==activeSeason}">2012</button></li>
-          <li><button class="tiny button" ng-click="switchSeason($event)" data-value='2013' ng-class="{active: '2013'==activeSeason}">2013</button></li>
-        </ul>
+        <div class="slider season-slider" data-min='2011' data-max='2013'></div>
       </div>
-      <div class='week columns large-1'>
+      <div class='week row'>
         <h5 class='title'>Week</h5>
-        <ul>
-          <li><button class="tiny button style-active" ng-click="switchWeek($event)" data-value={{}} ng-class="{active: ''==activeWeek}">All</button></li>
-        </ul>
-        <div class="slider week-slider"></div>
+        <div class="slider week-slider" data-min='1' data-max='17'></div>
       </div>
       <div class='draw-graph'>
       </div>
-
     </div>
   </div>
 </body>
