@@ -7,6 +7,6 @@ setupdb:
   make seed-concussions
 
 seed-concussions:
-  node concussions.js seed
+  psql $(DBNAME) -c "copy injuries from stdin with CSV HEADER;" < injuries.csv
 
 
