@@ -41,7 +41,10 @@
           <div class='week-label' ng-repeat="week in weeks">{{$index + 1}}</div>
         </div>
       </div>
-      <div class='draw-graph'>
+      <div class='draw-graph' ng-show="data">
+      </div>
+      <div class='no-data' ng-hide="data">
+        No results found!
       </div>
     </div>
   </div>
